@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc">
+        <span id="title">BMI Calculator</span>
+        <input id="height" type="number" placeholder="Height (in cm)">
+        <input id="weight" type="number" placeholder="Weight (in kg)">
+        <button onclick="calculate()">Calculate</button>
+        <span id="result" class="result">Your result will be shown here</span>
+    </div> 
+    <script src="/eel.js"></script>
+    <script>
+        const result_text = document.getElementById('result');
+        const height = document.getElementById("height");
+        const weight = document.getElementById("weight");
+
+        function calculate() {
+            eel.bmi_calculator(height.value, weight.value)(result);
+        }
+
+        function result(output) {
+            result_text.innerHTML = output;
+        }
+    </script>
+</body>
+</html>
